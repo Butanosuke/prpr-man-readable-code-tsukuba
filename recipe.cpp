@@ -3,17 +3,19 @@
 #include <string>
 using namespace std;
 
-string getRecipeName(string recipe_file_path){
+void printRecipeNames(string recipe_file_path){
+  // レシピファイルが見つからなかった時のエラー処理
   ifstream recipe_file(recipe_file_path);
   if(recipe_file.fail()){
     cout << "レシピファイルが見つかりません" << endl;
     exit(EXIT_FAILURE);
   }
   
+  // レシピファイルから一行ずつ読み出力する
   string recipe_name;
-  recipe_file >> recipe_name;
-
-  return recipe_name;
+  while(getline(recipe_file, recipe_name)){
+    cout << recipe_name << endl;
+  }
 }
 
 int main(int argc, char* argv[])
@@ -23,10 +25,9 @@ int main(int argc, char* argv[])
     exit(EXIT_FAILURE);
   }
 
+  // レシピファイルをコンソールに表示
   string recipe_file_path = argv[1];
-  string recipe_name = getRecipeName(recipe_file_path);
-
-  cout << recipe_name << endl;
+  printRecipeNames(recipe_file_path);
   
   exit(EXIT_SUCCESS);
 }
