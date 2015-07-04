@@ -13,3 +13,8 @@ $ ./a.out data/recipe-data.txt
 $ clang++ recipe.cpp
 $ ./a.out data/recipe-data.txt
 ```
+もしくはIDを指定
+```
+$ c++ recipe.cpp
+$ ./a.out data/recipe-data.txt 2
+```
