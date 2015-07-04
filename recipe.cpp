@@ -16,9 +16,15 @@ string getRecipeName(string recipe_file_path){
   return recipe_name;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
-  string recipe_name = getRecipeName("data/recipe-data.txt");
+  if(argc == 1){
+    cout << "レシピファイルを指定してください";
+    exit(EXIT_FAILURE);
+  }
+
+  string recipe_file_path = argv[1];
+  string recipe_name = getRecipeName(recipe_file_path);
 
   cout << recipe_name << endl;
   
