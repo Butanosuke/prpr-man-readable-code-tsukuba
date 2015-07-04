@@ -6,10 +6,10 @@ Apple LLVM version 6.1.0 (clang-602.0.53) (based on LLVM 3.6.0svn)
 ## 実行方法
 ```
 $ c++ recipe.cpp
-$ ./a.out
+$ ./a.out data/recipe-data.txt
 ```
 もしくは
 ```
 $ clang++ recipe.cpp
-$ ./a.out
+$ ./a.out data/recipe-data.txt
 ```
